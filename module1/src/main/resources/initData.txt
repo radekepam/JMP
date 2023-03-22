@@ -1,0 +1,10 @@
+USERS
+1, name1, mail1
+2, name2, mail2
+3, name3, mail3
+4, name4, mail4
+EVENTS
+1, event1, 2023-10-11T18:30:30, 10
+2, event2, 2023-11-11T19:30:30, 1
+3, event3, 2023-12-11T20:30:30, 50
+4, event4, 2023-10-12T21:30:30, 1500
