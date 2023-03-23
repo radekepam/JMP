@@ -3,7 +3,6 @@ package com.module2.user;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.module2.shared.config.security.ApplicationUserRole;
-import com.module2.shared.error.ErrorModel;
 import com.module2.shared.model.user.User;
 import com.module2.shared.model.user.UserReadDto;
 import com.module2.shared.model.user.UserWriteDto;
