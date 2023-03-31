@@ -1,7 +1,7 @@
-package rest;
+package com.example.module3.eventServiceRest.controller;
 
-import api.EventService;
-import dto.Event;
+import com.example.module3.eventServiceApi.api.EventService;
+import com.example.module3.eventServiceDto.dto.Event;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,12 +31,6 @@ public class EventController {
             return ResponseEntity.ok(eventService.getAllEvents());
         }
     }
-
-//    @GetMapping
-//    public ResponseEntity<List<Event>> getAllEventsByTitle() {
-//        return ResponseEntity.ok(eventService.getAllEventsByTitle(title));
-//    }
-
     @DeleteMapping("/eventId")
     public ResponseEntity<Object> deleteEvent(@PathVariable("eventId") Long eventId) {
         eventService.deleteEvent(eventId);
