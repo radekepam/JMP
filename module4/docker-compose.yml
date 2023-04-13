@@ -1,0 +1,52 @@
+version: '3'
+networks:
+  my-network:
+    driver: bridge
+services:
+  discovery:
+    build: ./platform-services/discovery
+    ports:
+      - 8761:8761
+    networks:
+      - my-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8761"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+  apigateway:
+    depends_on:
+      discovery:
+        condition: service_healthy
+    build: ./platform-services/apigateway
+    ports:
+      - 8011:8011
+    networks:
+      - my-network
+  one:
+    depends_on:
+      discovery:
+        condition: service_healthy
+    build: ./buisness-services/one
+    ports:
+      - 8081:8081
+    networks:
+      - my-network
+  two:
+    depends_on:
+      discovery:
+        condition: service_healthy
+    build: ./buisness-services/two
+    ports:
+      - 8082:8082
+    networks:
+      - my-network
+  common:
+    depends_on:
+      discovery:
+        condition: service_healthy
+    build: ./buisness-services/common
+    ports:
+      - 8080:8080
+    networks:
+      - my-network

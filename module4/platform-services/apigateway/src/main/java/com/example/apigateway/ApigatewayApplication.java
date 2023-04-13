@@ -11,6 +11,7 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 public class ApigatewayApplication {
 
     public static void main(String[] args) {
+        System.out.println("Aplikacja uruchomila sie");
         SpringApplication.run(ApigatewayApplication.class, args);
     }
 
